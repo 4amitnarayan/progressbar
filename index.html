@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Progress Bar</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <ng ng-app="test">
+        <div class="container" ng-controller="AppCtrl">
+            <h2>Progress Bar</h2>
+            <hr>
+            <div class="row" ng-switch="progressOption">
+                <div class="col-md-12" ng-switch-default>
+                    <div class="col-md-12">
+                        <div progress-bar="" id="progressChart" data-total="mydata.limit" data-show-percent="true"
+                            data-complete="mydata.bars[0] + data.tes" data-complete-label="%" title="" ></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div progress-bar="" id="progressChart2" data-total="mydata.limit" data-bar-class="progress-bar-warning" data-show-percent="true"
+                            data-complete="mydata.bars[1]" data-complete-label="%" title=""></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div progress-bar="" id="progressChart3" data-total="mydata.limit" data-bar-class="progress-bar-success" data-show-percent="true"
+                            data-complete="mydata.bars[2]" data-complete-label="%" title=""></div>
+                    </div>
+                </div>
+                <div class="col-md-12" ng-switch-when=66>
+                    <div class="col-md-12">
+                        <div progress-bar="" id="progressChart" data-total="mydata.limit" data-show-percent="true"
+                            data-complete="mydata.bars[0]" data-complete-label="%" title="" ></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div progress-bar="" id="progressChart2" data-total="mydata.limit" data-bar-class="progress-bar-warning" data-show-percent="true"
+                            data-complete="mydata.bars[1] + data.tes" data-complete-label="%" title=""></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div progress-bar="" id="progressChart3" data-total="mydata.limit" data-bar-class="progress-bar-success" data-show-percent="true"
+                            data-complete="mydata.bars[2]" data-complete-label="%" title=""></div>
+                    </div>
+                </div>
+                <div class="col-md-12" ng-switch-when=19>
+                    <div class="col-md-12">
+                        <div progress-bar="" id="progressChart" data-total="mydata.limit" data-show-percent="true"
+                            data-complete="mydata.bars[0]" data-complete-label="%" title="" ></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div progress-bar="" id="progressChart2" data-total="mydata.limit" data-bar-class="progress-bar-warning" data-show-percent="true"
+                            data-complete="mydata.bars[1]" data-complete-label="%" title=""></div>
+                    </div>
+                    <div class="col-md-12">
+                        <div progress-bar="" id="progressChart3" data-total="mydata.limit" data-bar-class="progress-bar-success" data-show-percent="true"
+                            data-complete="mydata.bars[2] + data.tes" data-complete-label="%" title=""></div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-2">
+                        <select name="repeatSelect" ng-model="progressOption">
+                            <option ng-repeat="bar in mydata.bars" value="{{bar}}">#Progress_{{bar}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2" ng-repeat="button in mydata.buttons">
+                        <button class="btn btn-primary" ng-click="data.tes = button">{{button}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng>
+    <script type='text/javascript' src="js/jquery.min.js"></script>
+    <script type='text/javascript' src="js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="js/angular.min.js"></script>
+    <script type='text/javascript' src="js/script.js"></script>
+</body>
+</html>
